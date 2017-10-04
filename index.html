@@ -13,18 +13,23 @@
   </head>
   <body>
     <div id="map"></div>
-    <script src="scripts.js"></script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpzKXrhtmAX0uUr0Jytc5GXWecUn8kB08&callback=initMap">
-    </script>
-    <form>
-      <input type="text" name="city" id="city" value="">
-      <select class="" name="state" id="state">
-        <option value="" selected>Select a State</option>
-        <option value="UT">UT</option>
-      </select>
-      <input id="submit" type="submit" value="Submit">
-      <p id="error"></p>
-    </form>
+      <script src="scripts.js"></script>
+      <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpzKXrhtmAX0uUr0Jytc5GXWecUn8kB08&callback=initMap">
+      </script>
+      
+    <div id="cityFinder">
+        <form>
+          <h1>Traffic Situation Near Me</h1>
+          <input type="text" name="city" id="city" value="">
+          <select class="" name="state" id="state">
+            <option value="" selected>Select a State</option>
+            <option value="UT">UT</option>
+          </select>
+          <input id="submit" type="submit" value="Submit">
+          <p id="error"></p>
+        </form>
+    </div>
+    
   </body>
 </html>
