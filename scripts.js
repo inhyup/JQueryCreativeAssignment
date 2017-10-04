@@ -11,6 +11,15 @@ function initMap() {
 }
 
 $(document).ready(function() {
+var statesUrl = 'https://gist.githubusercontent.com/mshafrir/2646763/raw/8b0dbb93521f5d6889502305335104218454c2bf/states_titlecase.json';
+$.getJSON(statesUrl, function(json) {
+  var optionList = '';
+  $.each(json, function(i, item) {
+    optionList += '<option value="' + item.abbreviation + '">' + item.name + '</option>'
+  });
+  $('#state').html(optionList);
+});
+
 $('#submit').click(function(e) {
   e.preventDefault();
   var $city = $('#city')[0].value;
@@ -24,7 +33,7 @@ $('#submit').click(function(e) {
       initMap();
     }
     else {
-      $('#error').html('Invalid City or Stat Name');
+      $('#error').html('Invalid city or state name');
     }
   })
   .done(function() { console.log('get latlng getJSON request succeeded!'); })
