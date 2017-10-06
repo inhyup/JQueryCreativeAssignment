@@ -28,12 +28,14 @@ $('#submit').click(function(e) {
     $city.replace(' ', '+') + ',' + $state + '&key=AIzaSyCpzKXrhtmAX0uUr0Jytc5GXWecUn8kB08';
   $.getJSON(urlLatLng, function(json) {
     if (json.results.length > 0) {
-      $('#error').html('');
+      $('#message').html('Focus changed to ' + json.results[0].formatted_address);
+      $('#message').removeClass('error');
       centerPoint = json.results[0].geometry.location;
       initMap();
     }
     else {
-      $('#error').html('Invalid city or state name');
+      $('#message').addClass('error');
+      $('#message').html('Invalid city or state name');
     }
   })
   .done(function() { console.log('get latlng getJSON request succeeded!'); })
