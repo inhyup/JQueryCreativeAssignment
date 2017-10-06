@@ -3,7 +3,7 @@
   <head>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
-    <title>Traffic Layer</title>
+    <title>City Traffic</title>
     <link rel="stylesheet" href="styles.css">
     <script
       src="http://code.jquery.com/jquery-3.2.1.min.js"
@@ -22,13 +22,13 @@
         <form>
           <h1>Traffic Situation Near Me</h1>
           <p>Enter a city and state to refocus the map near your location.</p>
+          <p id="error"></p>
           <input type="text" name="city" id="city" value="">
           <select class="" name="state" id="state">
             <option value="" selected>Select a State</option>
             <option value="UT">UT</option>
           </select>
           <input id="submit" type="submit" value="Submit">
-          <p id="error"></p>
         </form>
     </div>
 
